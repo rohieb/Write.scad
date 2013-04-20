@@ -3,3 +3,83 @@ Routines for writing text in OpenSCAD.
 This repo is a mirror of Write.scad from http://www.thingiverse.com/thing:16193
 
 Licence: CC-BY-SA by HarlanDMii
+
+Original description from Thingiverse follows:
+
+Description
+===========
+
+UPDATED: 03/06/2013 Added Help file for creating fonts.
+I have looked everywhere for an easy way to write on my 3d objects. Everything
+I could find was hard to manipulate, so I decided to give it a shot myself.
+Hope you like this as much as I do. I'll try to answer any questions you have.
+
+write.scad Routines:
+write()
+writecube()
+writesphere()
+writecylinder()
+writecircle()
+
+Fonts:
+letters.dxf (change in write.scad)
+orbitron.dxf
+braille.dxf
+knewave.dxf
+BlackRose.dxf
+-------------------------
+writecylinder specs in testwritecylinder.scad
+-------------------------
+Be glad to add more fonts if requested, or give details to make your own. 
+
+
+Instructions
+============
+
+openscad version 2011.12 or later is required to be able to run this code. Be
+sure to download the latest version from http://openscad.org/
+
+Put the files (write.scad) and (letters.dfx) in
+the working directory with your open scad project.
+refrence write.scad in your code...(use)
+
+NOTE: write.scad contains write(),writesphere(),writecube() and writecylinder()
+modules
+
+// write anywhere in your openscad project
+locate([x,y,z])
+write("Hello World",h=6,t=3);
+
+// change fonts and spacing
+write("Hello World",h=6,t=3,font="knewave.dxf",space=1.1);
+
+// write on a cube
+translate([15,15,15])
+cube([20,20,10]);
+writecube("Hello World",[15,15,15],[20,20,10],face="top");
+
+// write on a sphere
+translate([15,15,15])
+sphere(12);
+writesphere("Hello World",[15,15,15],12);
+
+// write on a cylinder
+translate([0,0,0])
+cylinder(r=20,h=40,center=true);
+writecylinder("Text on Cylinder",[0,0,0],20,40,rotate=45,center=true);
+writecylinder("Text on top",[0,0,0],20,40,face="top",center=true);
+//detailed usage in testwritecylinder.scad
+//be sure to download the latest write.scad to use the new commands
+
+// write in circles
+writecircle("text",[0,0,0],radius);
+=================================================================
+=================================================================
+You are welcome to use and distribute this code freely. no need to make it a
+derivative of write.scad
+
+Check back every once in a while for additions.
+
+If you make something really cool that uses it, let me know. I want to see :)
+
+HAVE FUN WITH IT, and comments are always appreciated. 
