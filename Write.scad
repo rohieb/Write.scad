@@ -284,7 +284,7 @@ module write(word){
 //	echo ("The second letter is ",word[1]);
 //	echo (str(word[0],"_"));
 rotate(rotate,[0,0,-1]){
-	for (r = [0:len(word)]){   // count off each character
+	for (r = [0:len(word)-1]){   // count off each character
 		// if the letter is lower case, add an underscore to the end for file lookup
 		if ((word[r] == "a" ) || (word[r]== "b")  || (word[r]== "c") 
 	 	  || (word[r]== "d") || (word[r]== "e") || (word[r]== "f") 
