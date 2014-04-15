@@ -245,34 +245,34 @@ module writethecube(text,where,size){
 		if (face=="front") {
 			translate([where[0]+right-left,where[1]-size[1]/2,where[2]+up-down])
 			rotate(90,[1,0,0])
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 		if (face=="back") {
 			translate([where[0]+right-left,where[1]+size[1]/2,where[2]+up-down])
 			rotate(90,[1,0,0])   // rotate around the x axis
 			rotate(180,[0,1,0])  // rotate around the y axis (z before rotation)
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 		if (face=="left") {
 			translate([where[0]-size[0]/2,where[1]-right+left,where[2]+up-down ])
 			rotate(90,[1,0,0])   // rotate around the x axis
 			rotate(90,[0,-1,0])  // rotate around the y axis  (z before rotation)
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 		if (face=="right") {
 			translate([where[0]+size[0]/2,where[1]+right-left,where[2] +up-down])
 			rotate(90,[1,0,0])   // rotate around the x axis
 			rotate(90,[0,1,0])  // rotate around the y axis  (z before rotation)
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 		if (face=="top") {
 			translate([where[0]+right-left,where[1]+up-down,where[2]+size[2]/2 ])
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 		if (face=="bottom") {
 			translate([where[0]+right-left,where[1]-up+down,where[2]-size[2]/2 ])
 			rotate(180,[1,0,0])
-			write(text,center=true,h=h,rotate=rotate,t=t,font=font);
+			write(text,center=true,h=h,rotate=rotate,t=t,font=font,space=space);
 		}
 }
 
